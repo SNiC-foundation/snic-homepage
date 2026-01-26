@@ -1,0 +1,200 @@
+/* ===== BASE STYLES ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font: 10pt "Open Sans", Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+img {
+  border: none;
+}
+
+a {
+  font-weight: bold;
+  color: white;
+}
+
+/* ===== LAYOUT CONTAINER ===== */
+.binnen {
+  position: absolute;
+  top: 50%;
+  margin: 0 2em;
+  transform: translateY(-50%);
+}
+
+.logo {
+  margin-bottom: 10px;
+  display: block;
+  height: 240px;
+  position: relative;
+}
+
+.logo > img {
+  margin: auto 0;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+/* ===== MAIN SECTIONS ===== */
+.go-to-congress,
+.go-to-snic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2em;
+}
+
+.go-to-congress {
+  left: 0;
+  right: 50%;
+  background: white;
+  text-align: right;
+}
+
+.go-to-congress a {
+  color: #333;
+}
+
+.go-to-congress p,
+.go-to-snic p {
+  color: white;
+}
+
+.go-to-snic {
+  left: 50%;
+  background: #2b338f;
+  text-align: left;
+}
+
+.go-to-congress .binnen,
+.go-to-congress .logo > img {
+  right: 0;
+}
+
+.go-to-snic .binnen,
+.go-to-snic .logo > img {
+  left: 0;
+}
+
+/* ===== LINKS & BUTTONS ===== */
+.go-to-congress p a,
+.go-to-snic p a {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 7px 13px 7px 10px;
+  margin: 15px 0 0 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.go-to-congress p a::after,
+.go-to-snic p a::after {
+  content: "";
+}
+
+.go-to-congress p a {
+  border-color: white;
+  color: white;
+}
+
+.go-to-congress p a:hover {
+  background-color: white;
+  color: #22244b;
+}
+
+.go-to-snic p a:hover {
+  background-color: white;
+  color: #22244b;
+}
+
+/* ===== CHEVRON ICON ===== */
+.chevron::before {
+  border-style: solid;
+  border-width: 0.25em 0.25em 0 0;
+  content: "";
+  display: inline-block;
+  height: 0.45em;
+  left: 0.15em;
+  position: relative;
+  top: 0.35em;
+  transform: rotate(-45deg);
+  vertical-align: top;
+  width: 0.45em;
+}
+
+.chevron.right::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+/* ===== SNIC SECTION ===== */
+.availabilit {
+  background: #0f1459;
+}
+
+.availabilit .snic {
+  float: left;
+}
+
+.snic a {
+  color: white;
+}
+
+.go-to-snic .logo img {
+  max-width: 220px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 8pt;
+  }
+
+  .logo > img {
+    max-height: 100px;
+  }
+
+  .go-to-congress,
+  .go-to-snic {
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .go-to-congress {
+    top: 0;
+    bottom: 50%;
+  }
+
+  .go-to-snic {
+    top: 50%;
+    bottom: 0;
+  }
+
+  .binnen {
+    width: 100%;
+    margin: 0;
+    top: 50% !important;
+    left: 50% !important;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+
+  .go-to-congress .logo > img {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .go-to-snic .logo > img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
